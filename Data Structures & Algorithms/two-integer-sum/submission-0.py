@@ -1,0 +1,8 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            search_space = nums[i+1:len(nums)]
+            if(search_space.count(complement) != 0):
+                return [i, nums.index(complement, i+1, len(nums))]
+        return [-1, -1]
